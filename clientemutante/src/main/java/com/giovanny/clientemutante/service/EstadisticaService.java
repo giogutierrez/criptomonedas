@@ -25,13 +25,8 @@ public class EstadisticaService {
 	
 	public ResponseEntity<ResultOutDTO> getDatos(){
 		 ResultOutDTO datos = new ResultOutDTO();
-		 
-		 LOGGER.severe("");
 		 		 
 		 List<ConsultaOutDTO> listaConteo= iLogAdnRepository.countTotal();
-		 
-		System.out.print(listaConteo);
-		 
 		 
 		 for(ConsultaOutDTO countIndividual: listaConteo) {
 			 if(countIndividual.getMutante()) {
@@ -47,8 +42,6 @@ public class EstadisticaService {
 			LOGGER.severe(Constantes.ERROR_DIVISION);
 			throw new ApplicationException(Constantes.ERROR_DIVISION);
 		}
-		 
-		 
 		return new ResponseEntity<>(datos, HttpStatus.OK);
 	}	
 	

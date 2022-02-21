@@ -14,7 +14,7 @@ import com.giovanny.clientemutante.service.EstadisticaService;
 
 
 @RestController
-@RequestMapping("/estadistica")
+@RequestMapping("/estadisticaService")
 @Scope(value = WebApplicationContext.SCOPE_REQUEST)
 @CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS })
 public class EstadisticaController {
@@ -22,7 +22,7 @@ public class EstadisticaController {
 	@Autowired
 	private EstadisticaService estadisticaService;
 	
-	@GetMapping("getDatos")
+	@GetMapping("stats")
 	public ResponseEntity<ResultOutDTO> getDatos(){
 		
 		return estadisticaService.getDatos();

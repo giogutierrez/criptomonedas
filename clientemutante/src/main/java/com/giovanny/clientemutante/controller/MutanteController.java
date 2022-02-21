@@ -17,7 +17,7 @@ import com.giovanny.clientemutante.service.MutanteService;
 
 
 @RestController
-@RequestMapping("/mutant")
+@RequestMapping("/mutantService")
 @Scope(value = WebApplicationContext.SCOPE_REQUEST)
 @CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS })
 public class MutanteController {
@@ -31,7 +31,7 @@ public class MutanteController {
 	}
 	
 	
-	@PostMapping("isMutant")
+	@PostMapping("mutant")
 	public ResponseEntity<HttpStatus> validaAdn(@RequestBody AdnInDTO adn){
 		return mutanteService.validaAdn(adn);
 	}	
