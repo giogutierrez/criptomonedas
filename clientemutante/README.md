@@ -2,6 +2,11 @@
 
 Proyecto backend spring boot.
 
+Java JDK 8
+
+Apache maven
+
+
 # DB postgreSQL
 
 CREATE SEQUENCE mutant.log_adn_seq
