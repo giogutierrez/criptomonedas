@@ -18,7 +18,7 @@ CONSTRAINT log_adn_pk PRIMARY KEY (id_log)
 
 # despliegue sobre AWS fargate "Elastic Container Service"
 
-# Compila proyecto
+# Compila proyecto por consola
 
 mvn clean install
 
@@ -46,7 +46,7 @@ docker build -t usuarioDocker/clientemutante:latest .
 
 docker push usuarioDocker/clientemutante:latest
 
-# En esta punto vamos hacia AWS ECS-FARGATE
+# En este punto vamos hacia AWS ECS-FARGATE
 
 1. Get started
 2. Custom->Configure
@@ -64,4 +64,9 @@ Port mappings
 80
 
 update->next->next->next->create
+
+
+# Documentacion swagger
+
+http://44.202.106.136:8080/clienteMutante/swagger-ui.html#/
 
