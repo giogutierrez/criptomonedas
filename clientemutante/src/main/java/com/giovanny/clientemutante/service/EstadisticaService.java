@@ -29,7 +29,7 @@ public class EstadisticaService {
 		 List<ConsultaOutDTO> listaConteo= iLogAdnRepository.countTotal();
 		 
 		 for(ConsultaOutDTO countIndividual: listaConteo) {
-			 if(countIndividual.getMutante()) {
+			 if(Boolean.TRUE.equals(countIndividual.getMutante())) {
 				 datos.setCountMutantDna(countIndividual.getConteo());
 			 }else {
 				 datos.setCountHumanDna(countIndividual.getConteo());
@@ -37,7 +37,7 @@ public class EstadisticaService {
 		 }
 	 
 		 try {
-			 datos.setRatio(datos.getCountMutantDna()/datos.getCountHumanDna());
+			 datos.setRatio((double) datos.getCountMutantDna()/datos.getCountHumanDna());
 		} catch (Exception e) {
 			LOGGER.severe(Constantes.ERROR_DIVISION);
 			throw new ApplicationException(Constantes.ERROR_DIVISION);

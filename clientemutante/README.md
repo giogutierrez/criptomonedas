@@ -16,17 +16,20 @@ fecha                    timestamp NOT null,
 CONSTRAINT log_adn_pk PRIMARY KEY (id_log)
 );
 
-#despliegue sobre AWS fargate "Elastic Container Service"
+# despliegue sobre AWS fargate "Elastic Container Service"
 
 # Compila proyecto
 
 mvn clean install
+
 mvn install -DskipTests=true
 
 # creamos archivo dockerFile
 
 FROM openjdk:8-jdk-alpine
+
 ADD clientemutante.jar app.jar
+
 ENTRYPOINT ["java", "-jar", "app.jar"]
 
 # Pasar jar junto con el archivo dockerfile
