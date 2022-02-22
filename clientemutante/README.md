@@ -69,9 +69,3 @@ Port mappings
 80
 
 update->next->next->next->create
-
-
-# Documentacion swagger
-
-http://44.202.106.136:8080/clienteMutante/swagger-ui.html#/
-
